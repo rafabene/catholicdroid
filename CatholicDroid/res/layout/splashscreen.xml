@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imgSplashScreen"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:contentDescription="@string/picture_splashscreen"
+        android:paddingTop="13dp"
+        android:src="@drawable/ic_papal_seal" />
+
+    <TextView
+        android:id="@+id/txtSplashScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="#FF0000"
+        android:textSize="25pt" />
+
+</LinearLayout>
