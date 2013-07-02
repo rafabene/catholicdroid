@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="twitter.consumer.key">1HPKt5I6tTGcrdph2llqfw</string>
+    <string name="twitter.consumer.secret">cOaw8qysTuG5nODdAnlW66xx034TzJSFCsqHazsNuoc</string>
+    <string name="twitter.catholicdroid.callback_url">callback://catholicdroid</string>
+    
+</resources>

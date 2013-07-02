@@ -910,10 +910,13 @@ containing a value of this type.
         public static final int abs__textfield_searchview_right_holo_dark=0x7f02006d;
         public static final int abs__textfield_searchview_right_holo_light=0x7f02006e;
         public static final int abs__toast_frame=0x7f02006f;
-        public static final int ic_launcher=0x7f020070;
-        public static final int ic_papal_seal=0x7f020071;
+        public static final int ic_background=0x7f020070;
+        public static final int ic_launcher=0x7f020071;
+        public static final int ic_papal_seal=0x7f020072;
+        public static final int ic_twitter=0x7f020073;
     }
     public static final class id {
+        public static final int LinearLayout1=0x7f040032;
         public static final int abs__action_bar=0x7f040020;
         public static final int abs__action_bar_container=0x7f04001f;
         public static final int abs__action_bar_subtitle=0x7f040011;
@@ -953,18 +956,21 @@ containing a value of this type.
         public static final int abs__textButton=0x7f040013;
         public static final int abs__title=0x7f04001b;
         public static final int abs__up=0x7f04000b;
-        public static final int action_settings=0x7f040034;
+        public static final int action_settings=0x7f040038;
         public static final int disableHome=0x7f040009;
         public static final int edit_query=0x7f040026;
         public static final int homeAsUp=0x7f040006;
-        public static final int imgSplashScreen=0x7f040032;
+        public static final int imgImageView=0x7f040034;
+        public static final int imgSplashScreen=0x7f040036;
         public static final int listMode=0x7f040002;
+        public static final int main_gridview=0x7f040033;
         public static final int normal=0x7f040001;
         public static final int showCustom=0x7f040008;
         public static final int showHome=0x7f040005;
         public static final int showTitle=0x7f040007;
         public static final int tabMode=0x7f040003;
-        public static final int txtSplashScreen=0x7f040033;
+        public static final int txtSplashScreen=0x7f040037;
+        public static final int txtTextView=0x7f040035;
         public static final int useLogo=0x7f040004;
         public static final int wrap_content=0x7f040000;
     }
@@ -994,9 +1000,10 @@ containing a value of this type.
         public static final int abs__search_view=0x7f030013;
         public static final int abs__simple_dropdown_hint=0x7f030014;
         public static final int activity_main=0x7f030015;
-        public static final int sherlock_spinner_dropdown_item=0x7f030016;
-        public static final int sherlock_spinner_item=0x7f030017;
-        public static final int splashscreen=0x7f030018;
+        public static final int benevides_menuoptions_item_layout=0x7f030016;
+        public static final int sherlock_spinner_dropdown_item=0x7f030017;
+        public static final int sherlock_spinner_item=0x7f030018;
+        public static final int splashscreen=0x7f030019;
     }
     public static final class menu {
         public static final int main=0x7f0b0000;
@@ -1041,10 +1048,16 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abs__shareactionprovider_share_with_application=0x7f090007;
-        public static final int action_settings=0x7f09000f;
-        public static final int app_name=0x7f09000e;
-        public static final int hello_world=0x7f090010;
+        public static final int action_settings=0x7f090011;
+        public static final int app_name=0x7f090010;
+        public static final int hello_world=0x7f090012;
         public static final int picture_splashscreen=0x7f09000d;
+        public static final int pope_twitter=0x7f090013;
+        public static final int twitter_authorize=0x7f09000e;
+        public static final int twitter_catholicdroid_callback_url=0x7f090016;
+        public static final int twitter_consumer_key=0x7f090014;
+        public static final int twitter_consumer_secret=0x7f090015;
+        public static final int twitter_illegalState=0x7f09000f;
     }
     public static final class style {
         /** 
@@ -1056,17 +1069,6 @@ containing a value of this type.
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         
-
-        Base application theme for API 11+. This theme completely replaces
-        AppBaseTheme from res/values/styles.xml on API 11+ devices.
-    
- API 11 theme customizations can go here. 
-
-        Base application theme for API 14+. This theme completely replaces
-        AppBaseTheme from BOTH res/values/styles.xml and
-        res/values-v11/styles.xml on API 14+ devices.
-    
- API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f0a0059;
         /**  Application theme. 
@@ -1162,6 +1164,7 @@ containing a value of this type.
         public static final int Widget_Sherlock_SearchAutoCompleteTextView=0x7f0a0034;
         public static final int Widget_Sherlock_Spinner_DropDown_ActionBar=0x7f0a0024;
         public static final int Widget_Sherlock_TextView_SpinnerItem=0x7f0a0032;
+        public static final int screen_theme=0x7f0a005b;
     }
     public static final class styleable {
         /**  Attributes used to style the Action Bar. 
