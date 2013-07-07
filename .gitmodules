@@ -1,0 +1,3 @@
+[submodule "BenevidesAndroidLib"]
+	path = BenevidesAndroidLib
+	url = git@github.com:rafabene/BenevidesAndroidLib.git

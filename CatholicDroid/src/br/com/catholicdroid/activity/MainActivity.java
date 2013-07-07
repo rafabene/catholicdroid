@@ -11,6 +11,7 @@ import android.widget.GridView;
 import br.com.catholicdroid.R;
 import br.com.catholicdroid.domain.factory.MenuOptionFactory;
 
+import com.actionbarsherlock.view.MenuItem;
 import com.rafabene.android.lib.activity.BaseActivity;
 import com.rafabene.android.lib.adapter.MenuOptionAdapter;
 import com.rafabene.android.lib.domain.MenuOption;
@@ -31,6 +32,14 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(MainActivity.this, option.getActivity()));
             }
         });
+    }
+    
+    /**
+     * Avoid killing the main screen
+     */
+    @Override
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        return true;
     }
 
 }

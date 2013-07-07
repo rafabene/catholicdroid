@@ -4,6 +4,9 @@
     <string name="app_name">Catholic Droid</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    <string name="pope_twitter">Pope\'s Twitter</string>
-
+    <string name="pope.twitter">Pope\'s Twitter</string>
+    <string name="access.denied">Access Denied</string>
+	<string name="twitter.remove.auth">Remove Twitter Authorization</string>
+	<string name="twitter.remove.auth.success">Twitter Authorization removed!</string>
+	<string name="more">More</string>
 </resources>
