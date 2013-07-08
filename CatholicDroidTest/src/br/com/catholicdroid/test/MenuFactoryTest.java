@@ -3,12 +3,10 @@ package br.com.catholicdroid.test;
 import java.util.List;
 
 import junit.framework.Assert;
-
+import android.test.AndroidTestCase;
 import br.com.catholicdroid.domain.factory.MenuOptionFactory;
 
-import com.rafabene.android.lib.domain.MenuOption;
-
-import android.test.AndroidTestCase;
+import com.rafabene.android.lib.option.MenuOption;
 
 public class MenuFactoryTest extends AndroidTestCase {
 

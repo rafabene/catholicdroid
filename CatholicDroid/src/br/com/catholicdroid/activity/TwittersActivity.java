@@ -1,11 +1,6 @@
 package br.com.catholicdroid.activity;
 
 import static br.com.catholicdroid.Const.LOG;
-import twitter4j.Query;
-import twitter4j.QueryResult;
-import twitter4j.Status;
-import twitter4j.Twitter;
-import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;
 import android.net.Uri;
 import android.os.Bundle;
@@ -21,11 +16,8 @@ import com.rafabene.android.lib.twitter.TwitterUtil;
 
 public class TwittersActivity extends BaseActivity {
 
-    private String consumerKey = null;
-    private String consumerSecret = null;
-    private String callBackUrl = null;
-
-    private TwitterUtil twitterUtil;
+    private String consumerKey;
+    private String consumerSecret;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,21 +25,22 @@ public class TwittersActivity extends BaseActivity {
 
         consumerKey = this.getString(R.string.twitter_consumer_key);
         consumerSecret = this.getString(R.string.twitter_consumer_secret);
-        callBackUrl = this.getString(R.string.twitter_catholicdroid_callback_url);
-        twitterUtil = TwitterUtil.getInstance(this);
+        String callBackUrl = this.getString(R.string.twitter_catholicdroid_callback_url);
 
-        AccessToken accessToken = twitterUtil.loadAccessToken();
+        AccessToken accessToken = TwitterUtil.loadAccessToken(this);
         try {
 
             /**
              * Handle OAuth Callback
              */
+            TwitterUtil twitterUtil = new TwitterUtil(this, consumerKey, consumerSecret);
             Uri uri = getIntent().getData();
             if (uri != null && uri.toString().startsWith(callBackUrl)) {
                 String denied = uri.getQueryParameter("denied");
                 if (denied == null) {
                     String verifier = uri.getQueryParameter("oauth_verifier");
-                    accessToken = twitterUtil.getAccessTokenFromOAuthVerifier(consumerKey, consumerSecret, verifier);
+                    accessToken = twitterUtil.getAccessTokenFromOAuthVerifier(verifier);
+
                 } else {
                     Toast.makeText(this, R.string.access_denied, Toast.LENGTH_LONG).show();
                     finish();
@@ -55,16 +48,10 @@ public class TwittersActivity extends BaseActivity {
             }
 
             if (accessToken == null) {
-                twitterUtil.askOAuth(consumerKey, consumerSecret, callBackUrl);
+                twitterUtil.askOAuth(callBackUrl);
             } else {
-                Twitter twitter = new TwitterFactory().getInstance();
-                twitter.setOAuthConsumer(consumerKey, consumerSecret);
-                twitter.setOAuthAccessToken(accessToken);
-                Query q = new Query("q=Pontifex");
-                QueryResult result = twitter.search(q);
-                for (Status s : result.getTweets()) {
-                    System.out.println(s.getText());
-                }
+                String query = "from:" + getString(R.string.twitter_pontifex_profile);
+                twitterUtil.startTwitterDownloadService(query);
             }
         } catch (Exception e) {
             Log.e(LOG, e.getMessage(), e);
@@ -80,14 +67,13 @@ public class TwittersActivity extends BaseActivity {
         menuInflater.inflate(R.menu.twitter_menu, menu);
         return true;
     }
-   
 
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         super.onMenuItemSelected(featureId, item);
         switch (item.getItemId()) {
             case R.id.menuRemoveTwitterAuth:
-                twitterUtil.clearAccessToken();
+                TwitterUtil.clearAccessToken(this);
                 Toast.makeText(this, R.string.twitter_remove_auth_success, Toast.LENGTH_LONG).show();
                 finish();
                 break;

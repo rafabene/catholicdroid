@@ -13,8 +13,8 @@ import br.com.catholicdroid.domain.factory.MenuOptionFactory;
 
 import com.actionbarsherlock.view.MenuItem;
 import com.rafabene.android.lib.activity.BaseActivity;
-import com.rafabene.android.lib.adapter.MenuOptionAdapter;
-import com.rafabene.android.lib.domain.MenuOption;
+import com.rafabene.android.lib.option.MenuOption;
+import com.rafabene.android.lib.option.MenuOptionAdapter;
 
 public class MainActivity extends BaseActivity {
 
@@ -33,7 +33,7 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
-    
+
     /**
      * Avoid killing the main screen
      */
